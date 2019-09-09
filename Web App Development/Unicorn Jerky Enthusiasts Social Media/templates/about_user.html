@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Text CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/about.css">
+	
+    <title>About</title>
+	
+  </head>
+
+
+
+<body>
+<div id="us">
+<ul class="nav nav-pills">
+  <li><h3>{{session['current_user']}} &nbsp;</h3></li>
+  <li role="presentation" class="active" id="signout"><a href="{{ url_for('logout') }}">Sign Out</a></li>
+ </ul> 
+</div>
+<div>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="{{ url_for('fuck_self') }}">Posts</a></li>
+</ul>
+</div>
+
+<div class="edit_pro">
+	<a class="btn btn-lg btn-primary btn-block">Edit Profile</a>
+</div>
+
+
+<div class="row">
+	<div class="col-md-8">
+  		<table align="right">
+			<tr>
+	  			<td> <h4>First Name</h4></td>
+	  			<td>{{user.firstname}}</td>
+			</tr>
+			<tr>
+	  			<td> <h4>Last Name</h4></td>
+	  			<td>{{user.lastname}}</td>
+			</tr>
+			<tr>
+	  			<td><h4>User Name</h4></td>
+	  			<td>{{user.username}}</td>
+			</tr>
+			<tr>
+	  			<td><h4>Email</h4></td>
+	  			<td>{{user.email}}</td>
+			</tr>
+			<tr>
+	  			<td><h4>Password</h4></td>
+	  			<td>**********</td>
+			</tr>
+  		</table>
+	</div>
+</div>
+	
+</body>
+</html>

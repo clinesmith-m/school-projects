@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Text CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/general.css">
+	
+    <title>The Magic of Flavor</title>
+	
+  </head>
+
+
+
+
+ <body>
+	<h1>Today's Top Thoughts</h1>
+	<div id="post-start">Add Post</div>
+
+	<div class="uni-form">
+		<form action="" enctype="multipart/form-data" method="POST">
+			<div class="form-group">
+				<input type="file" id="imagefile" name="imagefile">
+			</div>
+			<div class="form-group">
+				<label for="title">Title</label>
+				<input type="text" class="form-control" id="title" name="title">
+			</div>
+			<div>
+				<label for="posttext">Share your thoughts</label>
+				<input type="text" class="form-control" id="posttext" name="posttext">
+			</div>
+			<button id="spit-button" class="btn btn-primary">Sparkle!</button>
+		</form>
+	</div>
+
+
+
+
+	<div id="us">
+		<ul class="nav nav-pills">
+			<li><h3>{{session['current_user']}} &nbsp</h3></li>
+			<li role="presentation" class="active"><a href="{{ url_for('show_user') }}">Your Profile</a></li>
+			<li role="presentation" class="active" id="signout"><a href="{{ url_for('logout') }}">Sign Out</a></li>
+		</ul>
+	</div>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+			<h3 class="flashes" align="center" style="color:#337ab7">{{ message }}</h3>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<div class="ps">
+		{% for i in posts %}
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<div><h3 class="panel-title">{{ i.title }}</h3></div>
+				{% if i.imgpath != None %}
+					{% set sauce1 = i.imgpath %}
+					{% set sauce2 = url_for("static", filename="img/uploads/placeholder.jpg" ) %}
+					{% set truesauce = sauce2.replace("placeholder.jpg", sauce1) %}
+ 
+					<img src="{{truesauce}}" alt="My Image">
+				{% endif %}
+				<div id="icon">
+					{% for j in user %}
+					{% if j.uid == i.puid %}
+					BY: {{j.username}}
+					{% endif %}
+					{% if j.username == session['current_user'] %}
+					<a class="glyphicon glyphicon-trash" id="del" href="{{ url_for('kill_post', pid=i.pid) }}">Delete</a>
+                    {% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="panel-body"><p>{{i.description}}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="{{ url_for("static", filename="js/init.js") }}"></script>
+    </script>
+ </body>
+</html>

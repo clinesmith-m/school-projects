@@ -1,0 +1,38 @@
+
+body {
+  margin-top: 20px;
+  background-image:url('rainbow.gif'); background-repeat:repeat;
+}
+#us{
+float: right;
+       margin-right: 20px;
+       margin-top: 10px;
+}
+#us h3{
+margin: 0 0 0 0;
+}
+table tr{
+	padding-top: 10px;
+}
+table tr td{
+	padding-left: 20px;
+	font-size: 22px;
+}
+table tr td h4{
+	font-weight: bold;
+}
+#signout{
+width: 100px;
+height: 20px;
+}
+#signout a{
+padding: 2px 0px 2px 20px;
+}
+.edit_pro{
+width: 10%;
+float: right;
+}
+.row{
+	background-color: white;
+}
+

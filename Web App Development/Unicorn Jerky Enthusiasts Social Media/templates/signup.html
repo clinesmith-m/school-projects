@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Text CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/general.css">
+	
+    <title>Unicorn Jerky Enthusiast</title>
+	
+  </head>
+
+<body>
+<div class="container">
+    <form class="form-signin" action="" enctype="multipart/form-data" method="POST">
+        <h2 class="form-signin-heading">Please Sign Up</h2>
+		<div class="form-group">
+			<label for="lastname">Last Name</label>
+			<input type="text" class="form-control" id="lastname" name="lastname">
+		</div>
+		<div class="form-group">
+			<label for="firstname">First Name</label>
+			<input type="text" class="form-control" id="firstname" name="firstname">
+		</div>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" id="username" name="username">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" name="email">
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" name="password">
+		</div>
+		<div class="form-group">
+			<label for="profilepic">Profile Photo</label>
+			<input type="file" id="profilepic" name="profilepic">
+		</div>
+		<button id="submission" class="btn btn-primary">Submit</button>
+		
+        <div class="noacc">Already have an account! <a class="signup" href="{{ url_for('signin') }}">Sign In Here</a></div>      
+    </form>
+
+      
+    </div>
+
+    <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
