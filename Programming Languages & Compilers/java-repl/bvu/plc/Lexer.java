@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lexer {
+    // My code starts here
     public ArrayList<Token> lex(String buf) {
         ArrayList<Token> tokens = new ArrayList<Token>();
         buf += " ";
@@ -129,6 +130,7 @@ public class Lexer {
 
         return tokens;
     }
+    // And ends here
 
     /**
      * This is a silly test method for the Lexer class.
